@@ -1,45 +1,93 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+
 #include <QMainWindow>
 #include <QLabel>
-#include <QStack>
-#include <QKeyEvent>
+
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
 }
 QT_END_NAMESPACE
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    QString operand;
-    QString opcode;
-    QStack<QString> operands;
-    QStack<QString> opcodes;
-    QString calculation(bool *ok=NULL);
 
-protected:
-    void keyPressEvent(QKeyEvent *event) override;
-    void keyReleaseEvent(QKeyEvent *event) override;
 private slots:
-    void btnNumClicked();
-    void btnBinaryOperatorClicked();
-    void btnUnaryOperatorClicked();
+    void on_actionAbout_triggered();
 
-    void on_btnPeriod_clicked();
-    void on_btnDel_clicked();
-    void on_btnClearAll_clicked();
-    void on_btnEqual_clicked();
-    // 新增CE功能槽函数
-    void on_btnCE_clicked();
-    // 新增正负号切换功能槽函数
-    void on_btnSign_clicked();
+    void on_actionFind_triggered();
+
+    void on_actionReplace_triggered();
+
+
+    void on_actionNew_triggered();
+
+    void on_actionOpen_triggered();
+
+    void on_actionSave_triggered();
+
+    void on_actionSaveAs_triggered();
+
+    void on_textEdit_textChanged();
+
+
+    void on_actionUndo_triggered();
+
+    void on_actionRedo_triggered();
+
+    void on_actionCut_triggered();
+
+    void on_actionCopy_triggered();
+
+    void on_actionPaste_triggered();
+
+    void on_textEdit_copyAvailable(bool b);
+
+    void on_textEdit_undoAvailable(bool b);
+
+    void on_textEdit_redoAvailable(bool b);
+
+    void on_actionSelectAll_triggered();
+
+
+
+    void on_actionFontColor_triggered();
+
+    void on_actionBackgroundColor_triggered();
+
+    void on_actionFontBackgroundColor_triggered();
+
+    void on_actionLineWrap_triggered();
+
+
+
+    void on_actionFont_triggered();
+
+    void on_actionStatusBar_triggered();
+
+    void on_actionToolBar_triggered();
+
+    void on_actionExit_triggered();
+
+    void on_textEdit_cursorPositionChanged();
+
 private:
     Ui::MainWindow *ui;
+
+    QLabel statusCursorLabel;
+    QLabel statusLabel;
+
+    QString filePath;
+    bool textChanged;
+
+    bool userEditConfirmed();
 };
 #endif // MAINWINDOW_H
-
-

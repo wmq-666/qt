@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/About.svg</file>
+        <file>img/Copy.svg</file>
+        <file>img/Cut.svg</file>
+        <file>img/Draft.svg</file>
+        <file>img/Exit.svg</file>
+        <file>img/Find.svg</file>
+        <file>img/Font.svg</file>
+        <file>img/LineWrap.svg</file>
+        <file>img/logo.svg</file>
+        <file>img/New.svg</file>
+        <file>img/Open.svg</file>
+        <file>img/Paste.svg</file>
+        <file>img/Redo.svg</file>
+        <file>img/Replace.svg</file>
+        <file>img/Save.svg</file>
+        <file>img/SaveAs.svg</file>
+        <file>img/SelectAll.svg</file>
+        <file>img/StatusBar.svg</file>
+        <file>img/ToolBar.svg</file>
+        <file>img/Undo.svg</file>
+    </qresource>
+</RCC>
