@@ -20,6 +20,7 @@ public:
 private slots:
     void on_btnlogin_clicked();
     void on_btncancel_clicked();
+    void handleLogoutFromWelcome();  // 添加这个槽函数
 
 signals:
     void loginSuccess();
@@ -27,6 +28,6 @@ signals:
 
 private:
     Ui::Login *ui;
-
 };
+
 #endif // LOGIN_H

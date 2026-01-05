@@ -16,14 +16,13 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Form
+class Ui_Score
 {
 public:
     QWidget *layoutWidget;
@@ -42,23 +41,14 @@ public:
     QLabel *label_3;
     QPushButton *pushButton_5;
     QLabel *label_4;
-    QWidget *layoutWidget_2;
-    QHBoxLayout *horizontalLayout_4;
-    QHBoxLayout *horizontalLayout_5;
-    QPushButton *btnscore;
-    QPushButton *btnstatistics;
-    QPushButton *btntrend;
-    QSpacerItem *horizontalSpacer;
-    QLabel *labelTitle;
-    QSpacerItem *horizontalSpacer_2;
-    QPushButton *btnlogout;
+    QPushButton *btnback;
 
-    void setupUi(QWidget *Form)
+    void setupUi(QWidget *Score)
     {
-        if (Form->objectName().isEmpty())
-            Form->setObjectName("Form");
-        Form->resize(588, 438);
-        layoutWidget = new QWidget(Form);
+        if (Score->objectName().isEmpty())
+            Score->setObjectName("Score");
+        Score->resize(588, 438);
+        layoutWidget = new QWidget(Score);
         layoutWidget->setObjectName("layoutWidget");
         layoutWidget->setGeometry(QRect(20, 30, 521, 381));
         verticalLayout = new QVBoxLayout(layoutWidget);
@@ -137,84 +127,38 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_3);
 
-        layoutWidget_2 = new QWidget(Form);
-        layoutWidget_2->setObjectName("layoutWidget_2");
-        layoutWidget_2->setGeometry(QRect(40, 0, 426, 27));
-        horizontalLayout_4 = new QHBoxLayout(layoutWidget_2);
-        horizontalLayout_4->setObjectName("horizontalLayout_4");
-        horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
-        horizontalLayout_5 = new QHBoxLayout();
-        horizontalLayout_5->setObjectName("horizontalLayout_5");
-        btnscore = new QPushButton(layoutWidget_2);
-        btnscore->setObjectName("btnscore");
+        btnback = new QPushButton(Score);
+        btnback->setObjectName("btnback");
+        btnback->setGeometry(QRect(30, 0, 75, 23));
 
-        horizontalLayout_5->addWidget(btnscore);
+        retranslateUi(Score);
 
-        btnstatistics = new QPushButton(layoutWidget_2);
-        btnstatistics->setObjectName("btnstatistics");
-
-        horizontalLayout_5->addWidget(btnstatistics);
-
-        btntrend = new QPushButton(layoutWidget_2);
-        btntrend->setObjectName("btntrend");
-        btntrend->setMinimumSize(QSize(0, 0));
-
-        horizontalLayout_5->addWidget(btntrend);
-
-
-        horizontalLayout_4->addLayout(horizontalLayout_5);
-
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-
-        horizontalLayout_4->addItem(horizontalSpacer);
-
-        labelTitle = new QLabel(layoutWidget_2);
-        labelTitle->setObjectName("labelTitle");
-
-        horizontalLayout_4->addWidget(labelTitle);
-
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-
-        horizontalLayout_4->addItem(horizontalSpacer_2);
-
-        btnlogout = new QPushButton(layoutWidget_2);
-        btnlogout->setObjectName("btnlogout");
-
-        horizontalLayout_4->addWidget(btnlogout);
-
-
-        retranslateUi(Form);
-
-        QMetaObject::connectSlotsByName(Form);
+        QMetaObject::connectSlotsByName(Score);
     } // setupUi
 
-    void retranslateUi(QWidget *Form)
+    void retranslateUi(QWidget *Score)
     {
-        Form->setWindowTitle(QCoreApplication::translate("Form", "Form", nullptr));
-        label->setText(QCoreApplication::translate("Form", "\346\210\220\347\273\251\347\256\241\347\220\206", nullptr));
-        label_2->setText(QCoreApplication::translate("Form", "\345\275\223\345\211\215\350\257\276\347\250\213\357\274\232", nullptr));
-        comboBox->setItemText(0, QCoreApplication::translate("Form", "\347\250\213\345\272\217\350\256\276\350\256\241\345\237\272\347\241\200", nullptr));
-        comboBox->setItemText(1, QCoreApplication::translate("Form", "\351\253\230\347\255\211\346\225\260\345\255\246", nullptr));
-        comboBox->setItemText(2, QCoreApplication::translate("Form", "\345\244\247\345\255\246\350\213\261\350\257\255", nullptr));
+        Score->setWindowTitle(QCoreApplication::translate("Score", "Form", nullptr));
+        label->setText(QCoreApplication::translate("Score", "\346\210\220\347\273\251\347\256\241\347\220\206", nullptr));
+        label_2->setText(QCoreApplication::translate("Score", "\345\275\223\345\211\215\350\257\276\347\250\213\357\274\232", nullptr));
+        comboBox->setItemText(0, QCoreApplication::translate("Score", "\347\250\213\345\272\217\350\256\276\350\256\241\345\237\272\347\241\200", nullptr));
+        comboBox->setItemText(1, QCoreApplication::translate("Score", "\351\253\230\347\255\211\346\225\260\345\255\246", nullptr));
+        comboBox->setItemText(2, QCoreApplication::translate("Score", "\345\244\247\345\255\246\350\213\261\350\257\255", nullptr));
 
-        pushButton->setText(QCoreApplication::translate("Form", "\346\211\271\351\207\217\345\275\225\345\205\245", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("Form", "\344\277\235\345\255\230\346\210\220\347\273\251", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("Form", "\346\270\205\347\251\272\350\276\223\345\205\245", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("Form", "\344\270\212\344\270\200\351\241\265", nullptr));
-        label_3->setText(QCoreApplication::translate("Form", "TextLabel", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("Form", "\344\270\213\344\270\200\351\241\265", nullptr));
-        label_4->setText(QCoreApplication::translate("Form", "TextLabel", nullptr));
-        btnscore->setText(QCoreApplication::translate("Form", "\346\210\220\347\273\251\347\256\241\347\220\206", nullptr));
-        btnstatistics->setText(QCoreApplication::translate("Form", "\346\210\220\347\273\251\347\273\237\350\256\241", nullptr));
-        btntrend->setText(QCoreApplication::translate("Form", "\346\210\220\347\273\251\350\266\213\345\212\277", nullptr));
-        labelTitle->setText(QString());
-        btnlogout->setText(QCoreApplication::translate("Form", "\351\200\200\345\207\272", nullptr));
+        pushButton->setText(QCoreApplication::translate("Score", "\346\211\271\351\207\217\345\275\225\345\205\245", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("Score", "\344\277\235\345\255\230\346\210\220\347\273\251", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("Score", "\346\270\205\347\251\272\350\276\223\345\205\245", nullptr));
+        pushButton_4->setText(QCoreApplication::translate("Score", "\344\270\212\344\270\200\351\241\265", nullptr));
+        label_3->setText(QCoreApplication::translate("Score", "TextLabel", nullptr));
+        pushButton_5->setText(QCoreApplication::translate("Score", "\344\270\213\344\270\200\351\241\265", nullptr));
+        label_4->setText(QCoreApplication::translate("Score", "TextLabel", nullptr));
+        btnback->setText(QCoreApplication::translate("Score", "\350\277\224\345\233\236\344\270\273\351\241\265\351\235\242", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Form: public Ui_Form {};
+    class Score: public Ui_Score {};
 } // namespace Ui
 
 QT_END_NAMESPACE

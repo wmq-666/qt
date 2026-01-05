@@ -1,0 +1,12 @@
+obj/idatabase.o
+obj/main.o
+obj/login.o
+obj/score.o
+obj/statistics.o
+obj/trend.o
+obj/welcome.o
+obj/moc_login.o
+obj/moc_score.o
+obj/moc_statistics.o
+obj/moc_trend.o
+obj/moc_welcome.o

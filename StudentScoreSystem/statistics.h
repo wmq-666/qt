@@ -1,10 +1,17 @@
 #ifndef STATISTICS_H
 #define STATISTICS_H
+#include <QWidget>
 
-class Statistics
-{
+namespace Ui { class Statistics; }
+
+class Statistics : public QWidget {
+    Q_OBJECT
 public:
-    Statistics();
+    explicit Statistics(QWidget *parent = nullptr);
+    ~Statistics();
+signals:
+    void backRequested(); // 定义返回信号
+private:
+    Ui::Statistics *ui;
 };
-
-#endif // STATISTICS_H
+#endif

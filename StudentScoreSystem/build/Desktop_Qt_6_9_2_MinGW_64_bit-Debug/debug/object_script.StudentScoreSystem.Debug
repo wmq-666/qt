@@ -1,10 +1,12 @@
-debug/idatabase.o
 debug/main.o
 debug/login.o
-debug/master.o
+debug/welcome.o
 debug/score.o
 debug/statistics.o
 debug/trend.o
-debug/welcome.o
+debug/idatabase.o
 debug/moc_login.o
-debug/moc_master.o
+debug/moc_welcome.o
+debug/moc_score.o
+debug/moc_statistics.o
+debug/moc_trend.o

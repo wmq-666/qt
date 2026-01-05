@@ -174,7 +174,9 @@ public:
         Login->setWindowTitle(QCoreApplication::translate("Login", "\347\231\273\345\275\225", nullptr));
         label->setText(QCoreApplication::translate("Login", "\345\255\246\347\224\237\346\210\220\347\273\251\344\270\216\345\210\206\346\236\220\347\263\273\347\273\237", nullptr));
         label_2->setText(QCoreApplication::translate("Login", "\347\224\250\346\210\267\345\220\215\357\274\232", nullptr));
+        username->setText(QCoreApplication::translate("Login", "admin", nullptr));
         label_3->setText(QCoreApplication::translate("Login", "\345\257\206\347\240\201\357\274\232", nullptr));
+        password->setText(QCoreApplication::translate("Login", "admin123", nullptr));
         btnlogin->setText(QCoreApplication::translate("Login", "\347\231\273\345\275\225", nullptr));
         btncancel->setText(QCoreApplication::translate("Login", "\345\217\226\346\266\210", nullptr));
     } // retranslateUi

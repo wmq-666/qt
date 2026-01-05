@@ -1,44 +1,52 @@
-QT       += core gui sql charts
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT += core gui sql charts widgets
 
 CONFIG += c++17
 
-# You can make your code fail to compile if it uses deprecated APIs.
-# In order to do so, uncomment the following line.
-#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 # 指定生成的可执行文件名
 TARGET = StudentScoreSystem
-# 添加资源文件（可选）
-RESOURCES += \
-    resources.qrc
 
+# 添加资源文件
+RESOURCES += resources.qrc
 
+# 源文件 - 确保顺序正确
 SOURCES += \
-    idatabase.cpp \
     main.cpp \
     login.cpp \
+    welcome.cpp \
     score.cpp \
     statistics.cpp \
     trend.cpp \
-    welcome.cpp
+    idatabase.cpp
 
+# 头文件
 HEADERS += \
-    idatabase.h \
     login.h \
+    welcome.h \
     score.h \
     statistics.h \
     trend.h \
-    welcome.h
+    idatabase.h
 
+# UI文件
 FORMS += \
     login.ui \
+    welcome.ui \
     score.ui \
     statistics.ui \
-    trend.ui \
-    welcome.ui
+    trend.ui
 
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+# 移除或注释掉这些行
+# MOC_DIR = moc
+# OBJECTS_DIR = obj
+
+# 使用相对路径
+INCLUDEPATH += .
+DEPENDPATH += .
+
+# 在 Windows 上
+win32 {
+    # 确保使用正确的编译器
+    QMAKE_CXX = g++
+    QMAKE_CC = gcc
+    QMAKE_LINK = g++
+}

@@ -1,10 +1,17 @@
 #ifndef SCORE_H
 #define SCORE_H
+#include <QWidget>
 
-class Score
-{
+namespace Ui { class Score; }
+
+class Score : public QWidget {
+    Q_OBJECT
 public:
-    Score();
+    explicit Score(QWidget *parent = nullptr);
+    ~Score();
+signals:
+    void backRequested(); // 定义返回信号
+private:
+    Ui::Score *ui;
 };
-
-#endif // SCORE_H
+#endif
