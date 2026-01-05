@@ -21,6 +21,9 @@ private slots:
     void on_btnlogin_clicked();
     void on_btncancel_clicked();
 
+signals:
+    void loginSuccess();
+    void loginFailed();
 
 private:
     Ui::Login *ui;

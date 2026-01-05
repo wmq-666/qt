@@ -33,15 +33,15 @@ void Login::on_btnlogin_clicked()
 
     // 连接数据库
     if (!db.connect()) {
-        QMessageBox::critical(this, "数据库错误",
-                              "无法连接数据库！\n"
-                              "请检查文件：C:/Users/15417/Desktop/lab/database/student.db");
+        QMessageBox::critical(this, "数据库错误","无法连接数据库！\n"
+);
         return;
     }
 
     // 验证用户
     if (db.validateUser(username, password)) {
         QMessageBox::information(this, "登录成功", "登录成功！");
+        emit loginSuccess();
         this->close();
     } else {
         QMessageBox::warning(this, "登录失败", "用户名或密码错误！");

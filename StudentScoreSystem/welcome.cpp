@@ -1,3 +1,5 @@
 #include "welcome.h"
 
-Welcome::Welcome() {}
+Welcome::Welcome() {
+
+}

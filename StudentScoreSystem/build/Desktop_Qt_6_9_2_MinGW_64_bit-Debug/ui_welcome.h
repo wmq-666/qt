@@ -11,9 +11,8 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -21,43 +20,33 @@ QT_BEGIN_NAMESPACE
 class Ui_Form
 {
 public:
-    QGridLayout *gridLayout;
-    QSpacerItem *verticalSpacer;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_5;
-    QPushButton *pushButton_3;
-    QSpacerItem *verticalSpacer_2;
+    QLabel *labelTitle;
+    QPushButton *btnlogout;
+    QPushButton *btnscore;
+    QPushButton *btntrend;
+    QPushButton *btnstatistics;
 
     void setupUi(QWidget *Form)
     {
         if (Form->objectName().isEmpty())
             Form->setObjectName("Form");
         Form->resize(598, 416);
-        gridLayout = new QGridLayout(Form);
-        gridLayout->setObjectName("gridLayout");
-        verticalSpacer = new QSpacerItem(20, 179, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
-
-        gridLayout->addItem(verticalSpacer, 0, 1, 1, 1);
-
-        pushButton_4 = new QPushButton(Form);
-        pushButton_4->setObjectName("pushButton_4");
-
-        gridLayout->addWidget(pushButton_4, 1, 0, 1, 1);
-
-        pushButton_5 = new QPushButton(Form);
-        pushButton_5->setObjectName("pushButton_5");
-
-        gridLayout->addWidget(pushButton_5, 1, 1, 1, 1);
-
-        pushButton_3 = new QPushButton(Form);
-        pushButton_3->setObjectName("pushButton_3");
-
-        gridLayout->addWidget(pushButton_3, 1, 2, 1, 1);
-
-        verticalSpacer_2 = new QSpacerItem(20, 178, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
-
-        gridLayout->addItem(verticalSpacer_2, 2, 1, 1, 1);
-
+        labelTitle = new QLabel(Form);
+        labelTitle->setObjectName("labelTitle");
+        labelTitle->setGeometry(QRect(316, 51, 16, 16));
+        btnlogout = new QPushButton(Form);
+        btnlogout->setObjectName("btnlogout");
+        btnlogout->setGeometry(QRect(520, 0, 75, 23));
+        btnscore = new QPushButton(Form);
+        btnscore->setObjectName("btnscore");
+        btnscore->setGeometry(QRect(100, 190, 75, 23));
+        btntrend = new QPushButton(Form);
+        btntrend->setObjectName("btntrend");
+        btntrend->setGeometry(QRect(430, 190, 75, 23));
+        btntrend->setMinimumSize(QSize(0, 0));
+        btnstatistics = new QPushButton(Form);
+        btnstatistics->setObjectName("btnstatistics");
+        btnstatistics->setGeometry(QRect(250, 180, 75, 23));
 
         retranslateUi(Form);
 
@@ -67,9 +56,11 @@ public:
     void retranslateUi(QWidget *Form)
     {
         Form->setWindowTitle(QCoreApplication::translate("Form", "Form", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("Form", "\346\210\220\347\273\251\347\256\241\347\220\206", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("Form", "\346\210\220\347\273\251\347\273\237\350\256\241", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("Form", "\346\210\220\347\273\251\350\266\213\345\212\277", nullptr));
+        labelTitle->setText(QString());
+        btnlogout->setText(QCoreApplication::translate("Form", "\351\200\200\345\207\272", nullptr));
+        btnscore->setText(QCoreApplication::translate("Form", "\346\210\220\347\273\251\347\256\241\347\220\206", nullptr));
+        btntrend->setText(QCoreApplication::translate("Form", "\346\210\220\347\273\251\350\266\213\345\212\277", nullptr));
+        btnstatistics->setText(QCoreApplication::translate("Form", "\346\210\220\347\273\251\347\273\237\350\256\241", nullptr));
     } // retranslateUi
 
 };

@@ -16,6 +16,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -25,7 +26,7 @@ QT_BEGIN_NAMESPACE
 class Ui_Form
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QLabel *label;
     QHBoxLayout *horizontalLayout_2;
@@ -41,19 +42,29 @@ public:
     QLabel *label_3;
     QPushButton *pushButton_5;
     QLabel *label_4;
+    QWidget *layoutWidget_2;
+    QHBoxLayout *horizontalLayout_4;
+    QHBoxLayout *horizontalLayout_5;
+    QPushButton *btnscore;
+    QPushButton *btnstatistics;
+    QPushButton *btntrend;
+    QSpacerItem *horizontalSpacer;
+    QLabel *labelTitle;
+    QSpacerItem *horizontalSpacer_2;
+    QPushButton *btnlogout;
 
     void setupUi(QWidget *Form)
     {
         if (Form->objectName().isEmpty())
             Form->setObjectName("Form");
         Form->resize(588, 438);
-        widget = new QWidget(Form);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(20, 30, 521, 381));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(Form);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(20, 30, 521, 381));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName("label");
 
         verticalLayout->addWidget(label);
@@ -62,12 +73,12 @@ public:
         horizontalLayout_2->setObjectName("horizontalLayout_2");
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(layoutWidget);
         label_2->setObjectName("label_2");
 
         horizontalLayout->addWidget(label_2);
 
-        comboBox = new QComboBox(widget);
+        comboBox = new QComboBox(layoutWidget);
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->addItem(QString());
@@ -78,17 +89,17 @@ public:
 
         horizontalLayout_2->addLayout(horizontalLayout);
 
-        pushButton = new QPushButton(widget);
+        pushButton = new QPushButton(layoutWidget);
         pushButton->setObjectName("pushButton");
 
         horizontalLayout_2->addWidget(pushButton);
 
-        pushButton_2 = new QPushButton(widget);
+        pushButton_2 = new QPushButton(layoutWidget);
         pushButton_2->setObjectName("pushButton_2");
 
         horizontalLayout_2->addWidget(pushButton_2);
 
-        pushButton_3 = new QPushButton(widget);
+        pushButton_3 = new QPushButton(layoutWidget);
         pushButton_3->setObjectName("pushButton_3");
 
         horizontalLayout_2->addWidget(pushButton_3);
@@ -96,35 +107,80 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_2);
 
-        tableWidget = new QTableWidget(widget);
+        tableWidget = new QTableWidget(layoutWidget);
         tableWidget->setObjectName("tableWidget");
 
         verticalLayout->addWidget(tableWidget);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName("horizontalLayout_3");
-        pushButton_4 = new QPushButton(widget);
+        pushButton_4 = new QPushButton(layoutWidget);
         pushButton_4->setObjectName("pushButton_4");
 
         horizontalLayout_3->addWidget(pushButton_4);
 
-        label_3 = new QLabel(widget);
+        label_3 = new QLabel(layoutWidget);
         label_3->setObjectName("label_3");
 
         horizontalLayout_3->addWidget(label_3);
 
-        pushButton_5 = new QPushButton(widget);
+        pushButton_5 = new QPushButton(layoutWidget);
         pushButton_5->setObjectName("pushButton_5");
 
         horizontalLayout_3->addWidget(pushButton_5);
 
-        label_4 = new QLabel(widget);
+        label_4 = new QLabel(layoutWidget);
         label_4->setObjectName("label_4");
 
         horizontalLayout_3->addWidget(label_4);
 
 
         verticalLayout->addLayout(horizontalLayout_3);
+
+        layoutWidget_2 = new QWidget(Form);
+        layoutWidget_2->setObjectName("layoutWidget_2");
+        layoutWidget_2->setGeometry(QRect(40, 0, 426, 27));
+        horizontalLayout_4 = new QHBoxLayout(layoutWidget_2);
+        horizontalLayout_4->setObjectName("horizontalLayout_4");
+        horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName("horizontalLayout_5");
+        btnscore = new QPushButton(layoutWidget_2);
+        btnscore->setObjectName("btnscore");
+
+        horizontalLayout_5->addWidget(btnscore);
+
+        btnstatistics = new QPushButton(layoutWidget_2);
+        btnstatistics->setObjectName("btnstatistics");
+
+        horizontalLayout_5->addWidget(btnstatistics);
+
+        btntrend = new QPushButton(layoutWidget_2);
+        btntrend->setObjectName("btntrend");
+        btntrend->setMinimumSize(QSize(0, 0));
+
+        horizontalLayout_5->addWidget(btntrend);
+
+
+        horizontalLayout_4->addLayout(horizontalLayout_5);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer);
+
+        labelTitle = new QLabel(layoutWidget_2);
+        labelTitle->setObjectName("labelTitle");
+
+        horizontalLayout_4->addWidget(labelTitle);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer_2);
+
+        btnlogout = new QPushButton(layoutWidget_2);
+        btnlogout->setObjectName("btnlogout");
+
+        horizontalLayout_4->addWidget(btnlogout);
 
 
         retranslateUi(Form);
@@ -148,6 +204,11 @@ public:
         label_3->setText(QCoreApplication::translate("Form", "TextLabel", nullptr));
         pushButton_5->setText(QCoreApplication::translate("Form", "\344\270\213\344\270\200\351\241\265", nullptr));
         label_4->setText(QCoreApplication::translate("Form", "TextLabel", nullptr));
+        btnscore->setText(QCoreApplication::translate("Form", "\346\210\220\347\273\251\347\256\241\347\220\206", nullptr));
+        btnstatistics->setText(QCoreApplication::translate("Form", "\346\210\220\347\273\251\347\273\237\350\256\241", nullptr));
+        btntrend->setText(QCoreApplication::translate("Form", "\346\210\220\347\273\251\350\266\213\345\212\277", nullptr));
+        labelTitle->setText(QString());
+        btnlogout->setText(QCoreApplication::translate("Form", "\351\200\200\345\207\272", nullptr));
     } // retranslateUi
 
 };

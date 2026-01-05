@@ -18,7 +18,6 @@ SOURCES += \
     idatabase.cpp \
     main.cpp \
     login.cpp \
-    master.cpp \
     score.cpp \
     statistics.cpp \
     trend.cpp \
@@ -27,7 +26,6 @@ SOURCES += \
 HEADERS += \
     idatabase.h \
     login.h \
-    master.h \
     score.h \
     statistics.h \
     trend.h \
@@ -35,7 +33,6 @@ HEADERS += \
 
 FORMS += \
     login.ui \
-    master.ui \
     score.ui \
     statistics.ui \
     trend.ui \

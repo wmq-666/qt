@@ -3,7 +3,6 @@
 
 class Welcome
 {
-public:
     Welcome();
 };
 
