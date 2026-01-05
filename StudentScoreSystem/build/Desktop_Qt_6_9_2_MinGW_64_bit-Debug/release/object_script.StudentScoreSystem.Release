@@ -1,0 +1,10 @@
+release/idatabase.o
+release/main.o
+release/login.o
+release/master.o
+release/score.o
+release/statistics.o
+release/trend.o
+release/welcome.o
+release/moc_login.o
+release/moc_master.o
