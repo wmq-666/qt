@@ -40,6 +40,7 @@ public:
     QPushButton *btnInsert;
     QPushButton *btnSave;
     QPushButton *btnClear;
+    QPushButton *btnDelete;
     QTableView *tableView;
     QHBoxLayout *horizontalLayout_3;
 
@@ -107,6 +108,11 @@ public:
 
         horizontalLayout_2->addWidget(btnClear);
 
+        btnDelete = new QPushButton(Score);
+        btnDelete->setObjectName("btnDelete");
+
+        horizontalLayout_2->addWidget(btnDelete);
+
 
         verticalLayout->addLayout(horizontalLayout_2);
 
@@ -144,6 +150,7 @@ public:
         btnInsert->setText(QCoreApplication::translate("Score", "\346\211\271\351\207\217\345\275\225\345\205\245", nullptr));
         btnSave->setText(QCoreApplication::translate("Score", "\344\277\235\345\255\230\346\210\220\347\273\251", nullptr));
         btnClear->setText(QCoreApplication::translate("Score", "\346\270\205\347\251\272\350\276\223\345\205\245", nullptr));
+        btnDelete->setText(QCoreApplication::translate("Score", "\345\210\240\351\231\244\346\210\220\347\273\251", nullptr));
     } // retranslateUi
 
 };

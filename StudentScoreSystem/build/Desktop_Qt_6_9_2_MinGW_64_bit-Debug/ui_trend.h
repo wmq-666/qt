@@ -15,6 +15,7 @@
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
@@ -34,13 +35,17 @@ public:
     QLabel *label;
     QVBoxLayout *verticalLayout;
     QGroupBox *groupBox;
-    QPushButton *btnGenerate;
-    QWidget *widget;
+    QFormLayout *formLayout_2;
+    QVBoxLayout *verticalLayout_3;
     QFormLayout *formLayout;
     QLabel *label_2;
     QLineEdit *editStudentId;
     QLabel *label_3;
     QComboBox *comboBox;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *btnGenerate;
+    QSpacerItem *horizontalSpacer_2;
+    QSpacerItem *horizontalSpacer_3;
     QWidget *chartContainer;
 
     void setupUi(QWidget *Trend)
@@ -81,31 +86,28 @@ public:
         sizePolicy1.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
         groupBox->setSizePolicy(sizePolicy1);
         groupBox->setMinimumSize(QSize(1, 0));
-        btnGenerate = new QPushButton(groupBox);
-        btnGenerate->setObjectName("btnGenerate");
-        btnGenerate->setGeometry(QRect(10, 140, 75, 23));
-        widget = new QWidget(groupBox);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(10, 40, 177, 50));
-        formLayout = new QFormLayout(widget);
+        formLayout_2 = new QFormLayout(groupBox);
+        formLayout_2->setObjectName("formLayout_2");
+        verticalLayout_3 = new QVBoxLayout();
+        verticalLayout_3->setObjectName("verticalLayout_3");
+        formLayout = new QFormLayout();
         formLayout->setObjectName("formLayout");
-        formLayout->setContentsMargins(0, 0, 0, 0);
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(groupBox);
         label_2->setObjectName("label_2");
 
         formLayout->setWidget(0, QFormLayout::ItemRole::LabelRole, label_2);
 
-        editStudentId = new QLineEdit(widget);
+        editStudentId = new QLineEdit(groupBox);
         editStudentId->setObjectName("editStudentId");
 
         formLayout->setWidget(0, QFormLayout::ItemRole::FieldRole, editStudentId);
 
-        label_3 = new QLabel(widget);
+        label_3 = new QLabel(groupBox);
         label_3->setObjectName("label_3");
 
         formLayout->setWidget(1, QFormLayout::ItemRole::LabelRole, label_3);
 
-        comboBox = new QComboBox(widget);
+        comboBox = new QComboBox(groupBox);
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->addItem(QString());
@@ -114,11 +116,35 @@ public:
         formLayout->setWidget(1, QFormLayout::ItemRole::FieldRole, comboBox);
 
 
+        verticalLayout_3->addLayout(formLayout);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName("horizontalLayout");
+        btnGenerate = new QPushButton(groupBox);
+        btnGenerate->setObjectName("btnGenerate");
+
+        horizontalLayout->addWidget(btnGenerate);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_2);
+
+
+        verticalLayout_3->addLayout(horizontalLayout);
+
+
+        formLayout_2->setLayout(0, QFormLayout::ItemRole::LabelRole, verticalLayout_3);
+
+        horizontalSpacer_3 = new QSpacerItem(324, 80, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        formLayout_2->setItem(0, QFormLayout::ItemRole::FieldRole, horizontalSpacer_3);
+
+
         verticalLayout->addWidget(groupBox);
 
         chartContainer = new QWidget(Trend);
         chartContainer->setObjectName("chartContainer");
-        QSizePolicy sizePolicy2(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Minimum);
+        QSizePolicy sizePolicy2(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Expanding);
         sizePolicy2.setHorizontalStretch(0);
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(chartContainer->sizePolicy().hasHeightForWidth());
@@ -145,13 +171,13 @@ public:
         btnback->setText(QCoreApplication::translate("Trend", "\350\277\224\345\233\236\344\270\273\347\225\214\351\235\242", nullptr));
         label->setText(QCoreApplication::translate("Trend", "\350\266\213\345\212\277\345\210\206\346\236\220", nullptr));
         groupBox->setTitle(QCoreApplication::translate("Trend", "GroupBox", nullptr));
-        btnGenerate->setText(QCoreApplication::translate("Trend", "\347\224\237\346\210\220\350\266\213\345\212\277\345\233\276", nullptr));
         label_2->setText(QCoreApplication::translate("Trend", "\345\255\246\345\217\267\357\274\232", nullptr));
         label_3->setText(QCoreApplication::translate("Trend", "\350\257\276\347\250\213\357\274\232", nullptr));
         comboBox->setItemText(0, QCoreApplication::translate("Trend", "\347\250\213\345\272\217\350\256\276\350\256\241\345\237\272\347\241\200", nullptr));
         comboBox->setItemText(1, QCoreApplication::translate("Trend", "\351\253\230\347\255\211\346\225\260\345\255\246", nullptr));
         comboBox->setItemText(2, QCoreApplication::translate("Trend", "\345\244\247\345\255\246\350\213\261\350\257\255", nullptr));
 
+        btnGenerate->setText(QCoreApplication::translate("Trend", "\347\224\237\346\210\220\350\266\213\345\212\277\345\233\276", nullptr));
     } // retranslateUi
 
 };

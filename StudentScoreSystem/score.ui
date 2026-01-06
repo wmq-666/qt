@@ -108,6 +108,13 @@
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QPushButton" name="btnDelete">
+         <property name="text">
+          <string>删除成绩</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </item>
      <item>

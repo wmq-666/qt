@@ -1,4 +1,4 @@
-QT += core gui sql charts widgets
+QT += core gui sql charts
 
 CONFIG += c++17
 
