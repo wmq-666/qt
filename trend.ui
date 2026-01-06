@@ -13,6 +13,257 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">/* 基础样式 */
+QWidget {
+    background-color: #f5f7fa;
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+}
+
+/* 标题样式 */
+#label {
+    font-size: 24px;
+    font-weight: bold;
+    color: #409eff;
+    padding: 10px 0;
+    border-bottom: 2px solid #409eff;
+    margin-bottom: 15px;
+}
+
+/* 按钮通用样式 */
+QPushButton {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #c0c4cc;
+    font-weight: bold;
+    min-width: 80px;
+    background-color: white;
+}
+
+QPushButton:hover {
+    background-color: #f5f7fa;
+    border-color: #409eff;
+}
+
+QPushButton:pressed {
+    background-color: #ecf5ff;
+}
+
+/* 返回按钮特殊样式 */
+#btnback {
+    background-color: #909399;
+    color: white;
+    border: none;
+}
+
+/* 生成报告按钮特殊样式 */
+#btnGenerate {
+    background-color: #409eff;
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+/* 分组框样式 */
+QGroupBox {
+    border: 2px solid #ebeef5;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 15px;
+    background-color: white;
+    font-weight: bold;
+    color: #303133;
+    font-size: 16px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 20px;
+    padding: 0 10px;
+    color: #409eff;
+    background-color: white;
+}
+
+/* 标签样式 */
+QLabel {
+    color: #606266;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* 输入框样式 */
+QLineEdit {
+    padding: 8px 12px;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    background-color: white;
+    selection-background-color: #409eff;
+    selection-color: white;
+    min-width: 150px;
+}
+
+QLineEdit:focus {
+    border-color: #409eff;
+    border-width: 2px;
+}
+
+/* 下拉框样式 */
+QComboBox {
+    padding: 8px 12px;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    background-color: white;
+    min-width: 150px;
+}
+
+QComboBox:hover {
+    border-color: #c0c4cc;
+}
+
+QComboBox:focus {
+    border-color: #409eff;
+    border-width: 2px;
+}
+
+QComboBox::drop-down {
+    border: none;
+    padding-right: 5px;
+}
+
+/* 表格样式 - 趋势数据表格 */
+QTableWidget {
+    background-color: white;
+    border: 1px solid #ebeef5;
+    border-radius: 4px;
+    gridline-color: #ebeef5;
+    alternate-background-color: #fafafa;
+    selection-background-color: #ecf5ff;
+    selection-color: #409eff;
+}
+
+QTableWidget::item {
+    padding: 8px;
+    border-right: 1px solid #ebeef5;
+    border-bottom: 1px solid #ebeef5;
+    text-align: center;
+}
+
+/* 趋势列特殊样式 - 上升趋势 */
+QTableWidget::item[column=&quot;2&quot;]:contains(&quot;↑&quot;) {
+    color: #67c23a;
+    font-weight: bold;
+}
+
+/* 趋势列特殊样式 - 下降趋势 */
+QTableWidget::item[column=&quot;2&quot;]:contains(&quot;↓&quot;) {
+    color: #f56c6c;
+    font-weight: bold;
+}
+
+/* 趋势列特殊样式 - 持平 */
+QTableWidget::item[column=&quot;2&quot;]:contains(&quot;→&quot;) {
+    color: #e6a23c;
+    font-weight: bold;
+}
+
+/* 表头样式 */
+QHeaderView::section {
+    background-color: #f5f7fa;
+    padding: 10px;
+    border: none;
+    border-right: 1px solid #ebeef5;
+    border-bottom: 2px solid #409eff;
+    font-weight: bold;
+    color: #606266;
+    text-align: center;
+}
+
+/* 文本编辑框样式 - 分析报告 */
+QTextEdit {
+    border: 2px solid #ebeef5;
+    border-radius: 6px;
+    background-color: white;
+    padding: 10px;
+    font-family: 'Microsoft YaHei', '宋体', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+QTextEdit:focus {
+    border-color: #409eff;
+}
+
+/* 表单布局间距 */
+QFormLayout {
+    spacing: 10px;
+}
+
+QFormLayout::item {
+    margin-bottom: 15px;
+}
+
+/* 布局间距 */
+QVBoxLayout {
+    spacing: 15px;
+}
+
+QHBoxLayout {
+    spacing: 10px;
+}
+
+/* 水平间隔器 */
+QSpacerItem[orientation=&quot;1&quot;] {  /* Horizontal */
+    background-color: transparent;
+}
+
+/* 垂直间隔器 */
+QSpacerItem[orientation=&quot;2&quot;] {  /* Vertical */
+    background-color: transparent;
+}
+
+/* 表格标题样式 */
+QTableWidget QTableCornerButton::section {
+    background-color: #f5f7fa;
+    border: 1px solid #ebeef5;
+}
+
+/* 滚动条样式 */
+QScrollBar:vertical {
+    border: none;
+    background-color: #f5f7fa;
+    width: 10px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #c0c4cc;
+    border-radius: 5px;
+    min-height: 20px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #a0a4a8;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: none;
+    background: none;
+}
+
+/* 分析报告区域特殊样式 */
+#txtAnalysis {
+    font-size: 14px;
+    line-height: 1.8;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+}
+
+#txtAnalysis QScrollBar:vertical {
+    width: 8px;
+}</string>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="1">
     <widget class="QPushButton" name="btnback">
