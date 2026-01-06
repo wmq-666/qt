@@ -116,7 +116,7 @@
               <item>
                <widget class="QPushButton" name="btnGenerate">
                 <property name="text">
-                 <string>生成趋势图</string>
+                 <string>成绩趋势分析报告</string>
                 </property>
                </widget>
               </item>
@@ -151,10 +151,33 @@
            </spacer>
           </item>
           <item row="1" column="0" colspan="2">
-           <widget class="QTableWidget" name="tableHistory"/>
+           <widget class="QTableWidget" name="tableTrend">
+            <property name="columnCount">
+             <number>3</number>
+            </property>
+            <column>
+             <property name="text">
+              <string>考试日期</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>分数</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>升降趋势</string>
+             </property>
+            </column>
+           </widget>
           </item>
-          <item row="2" column="0">
-           <widget class="QLineEdit" name="lblAnalysis"/>
+          <item row="2" column="0" colspan="2">
+           <widget class="QTextEdit" name="txtAnalysis">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
