@@ -1,6 +1,13 @@
 #ifndef SCORE_H
 #define SCORE_H
+
 #include <QWidget>
+#include <QSqlRelationalTableModel>
+#include <QSqlRelationalDelegate>
+#include <QSqlError>
+#include <QMessageBox>
+#include <QSqlQuery>
+#include <QDate>
 
 namespace Ui { class Score; }
 
@@ -10,8 +17,16 @@ public:
     explicit Score(QWidget *parent = nullptr);
     ~Score();
 signals:
-    void backRequested(); // 定义返回信号
+    void backRequested();
+private slots:
+    void on_btnback_clicked();
+    void on_btnserach_clicked();
+    void on_btnInsert_clicked();
+    void on_btnSave_clicked();
+    void on_btnClear_clicked();
 private:
     Ui::Score *ui;
+    QSqlRelationalTableModel *m_model;
+    void initModel();
 };
 #endif

@@ -64,44 +64,28 @@ void Login::on_btnlogin_clicked()
         return;
     }
 
-    // 创建数据库对象
     IDatabase db;
-
-    // 连接数据库
+    // 1. 这里必须先 connect，connect 会创建全局的“默认连接”
     if (!db.connect()) {
-        QMessageBox::critical(this, "数据库错误","无法连接数据库！");
+        QMessageBox::critical(this, "数据库错误","无法连接数据库文件！");
         return;
     }
 
-    // 验证用户
-    bool loginSuccessful = true;  // 测试用
+    // 2. 调用真正的验证函数（去查 users 表）
+    if (db.validateUser(username, password)) {
+        QMessageBox::information(this, "登录成功", "欢迎回来！");
 
-    if (loginSuccessful) {
-        QMessageBox::information(this, "登录成功", "登录成功！");
-
-        // 创建并显示Welcome窗口
         Welcome *welcomeWindow = new Welcome();
         welcomeWindow->show();
 
-        // 连接Welcome的退出信号
         connect(welcomeWindow, &Welcome::logoutRequested, [this, welcomeWindow]() {
             this->show();
             welcomeWindow->deleteLater();
-
-            // 清空登录信息
-            ui->username->clear();
-            ui->password->clear();
-            ui->username->setFocus();
         });
 
-        // 隐藏登录窗口
         this->hide();
-
-        emit loginSuccess();
     } else {
         QMessageBox::warning(this, "登录失败", "用户名或密码错误！");
         ui->password->clear();
-        ui->password->setFocus();
-        emit loginFailed();
     }
 }

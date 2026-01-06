@@ -7,41 +7,31 @@ IDatabase::IDatabase() : m_isConnected(false)
 
 IDatabase::~IDatabase()
 {
-    if (m_db.isOpen()) {
-        m_db.close();
-    }
+
 }
 
 bool IDatabase::connect()
 {
-    // 如果已经连接，直接返回成功
-    if (m_isConnected && m_db.isOpen()) {
-        return true;
-    }
-
-    // 数据库路径
+    // 数据库路径（确保路径正确）
     QString dbPath = "C:/Users/15417/Desktop/lab/database/student.db";
 
-    // 检查文件是否存在
-    if (!QFileInfo::exists(dbPath)) {
-        qDebug() << "数据库文件不存在:" << dbPath;
-        return false;
+    // 检查是否已经存在默认连接，如果存在且已打开则直接返回
+    if (QSqlDatabase::contains("qt_sql_default_connection")) {
+        m_db = QSqlDatabase::database("qt_sql_default_connection");
+        if (m_db.isOpen()) return true;
+    } else {
+        // 创建默认连接（不传第二个参数）
+        m_db = QSqlDatabase::addDatabase("QSQLITE");
     }
 
-    // 创建连接（每次都使用新的连接名）
-    static int counter = 0;
-    QString connectionName = QString("DB_%1").arg(++counter);
-
-    m_db = QSqlDatabase::addDatabase("QSQLITE", connectionName);
     m_db.setDatabaseName(dbPath);
 
     if (!m_db.open()) {
         qDebug() << "数据库连接失败:" << m_db.lastError().text();
-        m_isConnected = false;
         return false;
     }
 
-    m_isConnected = true;
+    qDebug() << "数据库连接成功，路径:" << dbPath;
     return true;
 }
 
