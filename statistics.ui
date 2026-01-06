@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1072</width>
-    <height>664</height>
+    <width>763</width>
+    <height>562</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
+  <layout class="QGridLayout" name="gridLayout_3">
    <item row="0" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout_6">
      <item>
@@ -62,9 +62,9 @@
      <property name="title">
       <string>统计条件</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_5">
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_7">
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
@@ -151,7 +151,7 @@
         </item>
        </layout>
       </item>
-      <item>
+      <item row="1" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout_4">
         <item>
          <widget class="QPushButton" name="pushButton">
@@ -187,6 +187,209 @@
    </item>
    <item row="3" column="0">
     <widget class="QGroupBox" name="groupBox_2">
+     <property name="styleSheet">
+      <string notr="true">/* 基础样式 */
+QWidget {
+    background-color: #f5f7fa;
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+}
+
+/* 按钮通用样式 */
+QPushButton {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #c0c4cc;
+    font-weight: bold;
+    min-width: 80px;
+    background-color: white;
+}
+
+QPushButton:hover {
+    background-color: #f5f7fa;
+    border-color: #409eff;
+}
+
+QPushButton:pressed {
+    background-color: #ecf5ff;
+}
+
+/* 标题样式 */
+#label {
+    font-size: 24px;
+    font-weight: bold;
+    color: #409eff;
+    padding: 10px 0;
+}
+
+/* 分组框样式 */
+QGroupBox {
+    border: 2px solid #ebeef5;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 15px;
+    background-color: white;
+    font-weight: bold;
+    color: #303133;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 20px;
+    padding: 0 10px;
+    color: #409eff;
+}
+
+/* 标签样式 */
+QLabel {
+    color: #606266;
+    font-size: 14px;
+}
+
+/* 下拉框样式 */
+QComboBox {
+    padding: 6px 12px;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    background-color: white;
+    min-width: 150px;
+}
+
+QComboBox:hover {
+    border-color: #c0c4cc;
+}
+
+QComboBox::drop-down {
+    border: none;
+}
+
+QComboBox::down-arrow {
+    image: none;
+    border-left: 1px solid #dcdfe6;
+    padding-left: 5px;
+}
+
+/* 单选框样式 */
+QRadioButton {
+    spacing: 8px;
+    color: #606266;
+    font-size: 14px;
+}
+
+QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    border: 2px solid #c0c4cc;
+}
+
+QRadioButton::indicator:checked {
+    background-color: #409eff;
+    border: 2px solid #409eff;
+}
+
+QRadioButton::indicator:checked:hover {
+    background-color: #66b1ff;
+}
+
+/* 输入框样式 */
+QLineEdit {
+    padding: 6px 10px;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    background-color: white;
+    selection-background-color: #409eff;
+    selection-color: white;
+}
+
+QLineEdit:focus {
+    border-color: #409eff;
+    border-width: 2px;
+}
+
+QLineEdit:read-only {
+    background-color: #f5f7fa;
+    color: #909399;
+}
+
+/* 表格样式 - 用于全科统计页面 */
+QTableWidget {
+    background-color: white;
+    border: 1px solid #ebeef5;
+    border-radius: 4px;
+    gridline-color: #ebeef5;
+    alternate-background-color: #fafafa;
+}
+
+QTableWidget::item {
+    padding: 8px;
+    border-right: 1px solid #ebeef5;
+    border-bottom: 1px solid #ebeef5;
+}
+
+QTableWidget::item:selected {
+    background-color: #ecf5ff;
+    color: #409eff;
+}
+
+/* 表头样式 */
+QHeaderView::section {
+    background-color: #f5f7fa;
+    padding: 10px;
+    border: none;
+    border-right: 1px solid #ebeef5;
+    border-bottom: 2px solid #409eff;
+    font-weight: bold;
+    color: #606266;
+}
+
+/* StackedWidget 样式 */
+QStackedWidget {
+    border: 1px solid #ebeef5;
+    border-radius: 4px;
+    background-color: white;
+}
+
+/* 表单布局间距 */
+QFormLayout::item {
+    margin-bottom: 10px;
+}
+
+/* 水平布局间距 */
+QHBoxLayout {
+    spacing: 10px;
+}
+
+/* 垂直布局间距 */
+QVBoxLayout {
+    spacing: 10px;
+}
+
+/* 统计结果显示框特殊样式 */
+QLineEdit[name^=&quot;edit&quot;] {
+    min-width: 100px;
+    text-align: center;
+    font-weight: bold;
+    color: #303133;
+}
+
+/* 特定输入框颜色提示 */
+#editAvg {
+    color: #409eff;
+}
+
+#editMax {
+    color: #67c23a;
+}
+
+#editMin {
+    color: #f56c6c;
+}
+
+#editPassRate, #editExcellentRate {
+    color: #e6a23c;
+}</string>
+     </property>
      <property name="title">
       <string>统计结果</string>
      </property>
@@ -194,7 +397,7 @@
       <item>
        <widget class="QStackedWidget" name="stackedWidget">
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="PageSingle">
          <layout class="QGridLayout" name="gridLayout_2">
@@ -321,7 +524,7 @@
            <rect>
             <x>9</x>
             <y>9</y>
-            <width>511</width>
+            <width>501</width>
             <height>221</height>
            </rect>
           </property>
