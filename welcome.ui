@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Welcome</class>
+ <widget class="QWidget" name="Welcome">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>712</width>
+    <height>416</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* 背景美化 */
+QWidget#Welcome {
+    background-color: #f5f7f9;
+}
+
+/* 顶部标题 */
+QLabel#labelTitle {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* 主按钮样式（卡片效果） */
+QPushButton {
+    background-color: #ffffff;
+    border: 2px solid #d9d9d9;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #606266;
+    min-width: 120px;
+    min-height: 80px;
+}
+
+/* 对话框按钮样式 - 更小的尺寸 */
+QMessageBox QPushButton,
+QDialog QPushButton {
+    background-color: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #606266;
+    min-width: 60px;
+    min-height: 30px;
+}
+
+QMessageBox QPushButton:hover,
+QDialog QPushButton:hover {
+    background-color: #ecf5ff;
+    border-color: #409eff;
+    color: #409eff;
+}
+
+/* 鼠标悬停效果 */
+QPushButton:hover {
+    background-color: #ecf5ff;
+    border: 2px solid #409eff;
+    color: #409eff;
+}
+
+/* 退出按钮特殊样式 */
+QPushButton#btnlogout {
+    background-color: #ffffff;
+    color: #ff4d4f;
+    border: 2px solid #ff4d4f;
+    border-radius: 5px;
+    min-width: 60px;
+    min-height: 30px;
+    font-size: 12px;
+}
+QPushButton#btnlogout:hover {
+    background-color: #ff4d4f;
+    color: white;
+    border-color: #ff4d4f;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QPushButton" name="btnlogout">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>退出</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="PageHome">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="labelTitle">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnscore">
+         <property name="text">
+          <string>成绩管理</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>205</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnstatistics">
+         <property name="text">
+          <string>成绩统计</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>204</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btntrend">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>154</width>
+           <height>114</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>成绩趋势</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="Page2"/>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
