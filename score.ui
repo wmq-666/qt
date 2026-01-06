@@ -6,12 +6,116 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>588</width>
+    <width>593</width>
     <height>438</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>成绩管理</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* 基础样式 */
+QWidget {
+    background-color: #f5f7fa;
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+}
+
+/* 按钮通用样式 - 只改外观，不改颜色 */
+QPushButton {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #c0c4cc;
+    font-weight: bold;
+    min-width: 80px;
+}
+
+QPushButton:hover {
+    background-color: #f5f7fa;
+    border-color: #409eff;
+}
+
+QPushButton:pressed {
+    background-color: #ecf5ff;
+}
+
+/* 标签样式 */
+QLabel {
+    color: #303133;
+    font-size: 14px;
+}
+
+#label {
+    font-size: 24px;
+    font-weight: bold;
+    color: #409eff;
+    padding: 10px 0;
+}
+
+/* 下拉框样式 */
+QComboBox {
+    padding: 6px 12px;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    background-color: white;
+    min-width: 150px;
+}
+
+QComboBox:hover {
+    border-color: #c0c4cc;
+}
+
+QComboBox::drop-down {
+    border: none;
+}
+
+QComboBox::down-arrow {
+    image: none;
+    border-left: 1px solid #dcdfe6;
+    padding-left: 5px;
+}
+
+/* 表格样式 */
+QTableView {
+    background-color: white;
+    border: 1px solid #ebeef5;
+    border-radius: 4px;
+    gridline-color: #ebeef5;
+    selection-background-color: #ecf5ff;
+    selection-color: #409eff;
+}
+
+/* 设置交替行颜色 */
+QTableView::item:alternate {
+    background-color: #fafafa;
+}
+
+/* 表头样式 */
+QHeaderView::section {
+    background-color: #f5f7fa;
+    padding: 10px;
+    border: none;
+    border-right: 1px solid #ebeef5;
+    border-bottom: 2px solid #dcdfe6;
+    font-weight: bold;
+    color: #606266;
+}
+
+/* 表格单元格 */
+QTableView::item {
+    padding: 8px;
+    border-right: 1px solid #ebeef5;
+    border-bottom: 1px solid #ebeef5;
+}
+
+/* 选中样式 */
+QTableView::item:selected {
+    background-color: #ecf5ff;
+}
+
+/* 悬停样式 */
+QTableView::item:hover {
+    background-color: #f5f7fa;
+}</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
